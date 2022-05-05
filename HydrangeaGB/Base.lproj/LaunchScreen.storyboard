@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lanch" translatesAutoresizingMaskIntoConstraints="NO" id="cYI-86-Qc9">
-                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="800"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Собираем ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObL-Yk-XcV">
-                                <rect key="frame" x="95.666666666666686" y="407.66666666666669" width="199" height="39"/>
+                                <rect key="frame" x="95.666666666666686" y="424.66666666666669" width="199" height="39"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -35,7 +35,7 @@
                             <constraint firstItem="ObL-Yk-XcV" firstAttribute="centerX" secondItem="cYI-86-Qc9" secondAttribute="centerX" id="Onk-MJ-T3R"/>
                             <constraint firstItem="cYI-86-Qc9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Q4n-nc-tNy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cYI-86-Qc9" secondAttribute="trailing" id="Q9K-pi-6NZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cYI-86-Qc9" secondAttribute="bottom" id="Tm1-d3-00H"/>
+                            <constraint firstAttribute="bottom" secondItem="cYI-86-Qc9" secondAttribute="bottom" id="Tm1-d3-00H"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
