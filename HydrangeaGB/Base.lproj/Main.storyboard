@@ -9,45 +9,102 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--гортензии-->
+        <scene sceneID="hl1-vq-C0Z">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HydrangeaGB" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <navigationController navigationBarHidden="YES" id="9nr-OK-Jn3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="гортензии" image="book.fill" catalog="system" id="FIh-jM-0FA"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KuG-7c-Tac">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="V9x-R4-zab" kind="relationship" relationship="rootViewController" id="N5h-hV-KQX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DH1-UD-0mA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="480" y="-293"/>
+        </scene>
+        <!--заметки-->
+        <scene sceneID="zPO-qX-fiu">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="aj0-Ja-eH4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="заметки" image="note.text" catalog="system" id="0GS-Ll-JTV"/>
+                    <navigationBar key="navigationBar" userInteractionEnabled="NO" contentMode="scaleToFill" id="DvF-Fv-7dw">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.86230272050000001" green="0.92783319949999998" blue="0.80390411620000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="S1t-Zs-JRX" kind="relationship" relationship="rootViewController" id="L8I-uN-ws6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YtS-i4-5HG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="481" y="377"/>
+        </scene>
+        <!--hydrangea-->
+        <scene sceneID="Maj-qK-3FS">
+            <objects>
+                <viewController id="V9x-R4-zab" userLabel="hydrangea" customClass="HydrangeaViewController" customModule="HydrangeaGB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ehO-aa-Lsz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="SYe-J0-Iql">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="NBe-7s-4fe">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nfj-sT-ufd" customClass="NavigationBar" customModule="HydrangeaGB" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="98" id="JN1-Lt-xZi"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" alpha="0.94999999999999996" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="beM-8Z-iEf" userLabel="table" customClass="RoudingEdgesTable" customModule="HydrangeaGB" customModuleProvider="target">
+                                <rect key="frame" x="8" y="106" width="398" height="699"/>
+                                <color key="backgroundColor" red="0.86230272050000001" green="0.92783319949999998" blue="0.80390411620000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="kp3-oT-1eE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SYe-J0-Iql" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1cm-up-xpU"/>
-                            <constraint firstItem="SYe-J0-Iql" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7nG-Uj-wQV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SYe-J0-Iql" secondAttribute="bottom" id="X0t-tB-48B"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SYe-J0-Iql" secondAttribute="trailing" id="zBP-2t-8sh"/>
+                            <constraint firstAttribute="trailing" secondItem="Nfj-sT-ufd" secondAttribute="trailing" id="4CH-lb-qqd"/>
+                            <constraint firstItem="NBe-7s-4fe" firstAttribute="leading" secondItem="ehO-aa-Lsz" secondAttribute="leading" id="5WT-gf-Gsv"/>
+                            <constraint firstItem="Nfj-sT-ufd" firstAttribute="leading" secondItem="ehO-aa-Lsz" secondAttribute="leading" id="G33-3Z-erL"/>
+                            <constraint firstItem="NBe-7s-4fe" firstAttribute="trailing" secondItem="ehO-aa-Lsz" secondAttribute="trailing" id="KMS-YO-3rI"/>
+                            <constraint firstItem="NBe-7s-4fe" firstAttribute="top" secondItem="kp3-oT-1eE" secondAttribute="top" id="LzG-mI-1Gk"/>
+                            <constraint firstItem="beM-8Z-iEf" firstAttribute="bottom" secondItem="kp3-oT-1eE" secondAttribute="bottom" constant="-8" id="OGU-Hz-LBh"/>
+                            <constraint firstItem="beM-8Z-iEf" firstAttribute="leading" secondItem="kp3-oT-1eE" secondAttribute="leading" constant="8" id="P1e-y9-z9p"/>
+                            <constraint firstItem="NBe-7s-4fe" firstAttribute="bottom" secondItem="kp3-oT-1eE" secondAttribute="bottom" id="QPO-xh-Ihg"/>
+                            <constraint firstItem="beM-8Z-iEf" firstAttribute="trailing" secondItem="kp3-oT-1eE" secondAttribute="trailing" constant="-8" id="Qxk-3M-Ivd"/>
+                            <constraint firstItem="beM-8Z-iEf" firstAttribute="top" secondItem="Nfj-sT-ufd" secondAttribute="bottom" constant="8" id="WhC-e9-HEj"/>
+                            <constraint firstAttribute="top" secondItem="Nfj-sT-ufd" secondAttribute="top" id="sfk-rh-m8G"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="каталог" image="book.fill" catalog="system" id="4Wg-i0-EET"/>
+                    <navigationItem key="navigationItem" id="M7k-fc-UnB"/>
+                    <connections>
+                        <outlet property="customNavigationBar" destination="Nfj-sT-ufd" id="DKq-yw-CQ7"/>
+                        <outlet property="tableHydrangea" destination="beM-8Z-iEf" id="ufi-kj-UJJ"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="03d-Bx-cyT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1370" y="406"/>
+            <point key="canvasLocation" x="1283" y="-293"/>
         </scene>
         <!--notes-->
         <scene sceneID="Pbs-lj-vkV">
             <objects>
-                <viewController id="S1t-Zs-JRX" userLabel="notes" customClass="NotesViewController" customModule="HydrangeaGB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="S1t-Zs-JRX" userLabel="notes" customClass="NotesViewController" customModule="HydrangeaGB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yo2-Qv-czj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="BzD-Za-Bfq">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="BzD-Za-Bfq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                             </imageView>
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eh0-h3-ACJ" userLabel="head" customClass="RoudingEdgesView" customModule="HydrangeaGB" customModuleProvider="target">
-                                <rect key="frame" x="24" y="52" width="306" height="44"/>
+                                <rect key="frame" x="24" y="112" width="306" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="заметки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBd-ch-WrC">
                                         <rect key="frame" x="0.0" y="0.0" width="306" height="44"/>
@@ -65,12 +122,19 @@
                                     <constraint firstItem="hBd-ch-WrC" firstAttribute="leading" secondItem="eh0-h3-ACJ" secondAttribute="leading" id="n6N-eD-jdt"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" alpha="0.94999999999999996" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SOK-gn-feI" userLabel="table" customClass="RoudingEdgesTable" customModule="HydrangeaGB" customModuleProvider="target">
-                                <rect key="frame" x="8" y="104" width="398" height="701"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcu-7n-XEE" customClass="NavigationBar" customModule="HydrangeaGB" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="98" id="2g2-WZ-23i"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SOK-gn-feI" userLabel="table" customClass="RoudingEdgesTable" customModule="HydrangeaGB" customModuleProvider="target">
+                                <rect key="frame" x="8" y="106" width="398" height="699"/>
                                 <color key="backgroundColor" red="0.86230272050000001" green="0.92783319949999998" blue="0.80390411620000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfz-g4-90W" userLabel="addButton" customClass="RoudingEdgesButton" customModule="HydrangeaGB" customModuleProvider="target">
-                                <rect key="frame" x="346" y="52" width="44" height="44"/>
+                                <rect key="frame" x="346" y="112" width="44" height="44"/>
                                 <color key="backgroundColor" red="0.86230272050000001" green="0.92783319949999998" blue="0.80390411620000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="sfz-g4-90W" secondAttribute="height" id="ysw-eY-7WC"/>
@@ -87,84 +151,35 @@
                         <viewLayoutGuide key="safeArea" id="iTf-oI-Eb1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="SOK-gn-feI" firstAttribute="top" secondItem="gcu-7n-XEE" secondAttribute="bottom" constant="8" id="1oN-kV-Fft"/>
                             <constraint firstItem="SOK-gn-feI" firstAttribute="bottom" secondItem="iTf-oI-Eb1" secondAttribute="bottom" constant="-8" id="1vS-tf-vdr"/>
-                            <constraint firstItem="sfz-g4-90W" firstAttribute="top" secondItem="eh0-h3-ACJ" secondAttribute="top" id="6nB-tP-Lk0"/>
                             <constraint firstItem="SOK-gn-feI" firstAttribute="leading" secondItem="iTf-oI-Eb1" secondAttribute="leading" constant="8" id="78k-PG-SEI"/>
-                            <constraint firstItem="sfz-g4-90W" firstAttribute="trailing" secondItem="SOK-gn-feI" secondAttribute="trailing" constant="-16" id="UUW-mj-EHi"/>
+                            <constraint firstItem="gcu-7n-XEE" firstAttribute="trailing" secondItem="Yo2-Qv-czj" secondAttribute="trailing" id="MtB-uG-1md"/>
+                            <constraint firstItem="gcu-7n-XEE" firstAttribute="top" secondItem="Yo2-Qv-czj" secondAttribute="top" id="OlU-ZN-Gbz"/>
                             <constraint firstItem="BzD-Za-Bfq" firstAttribute="bottom" secondItem="iTf-oI-Eb1" secondAttribute="bottom" id="VXc-uM-iqC"/>
-                            <constraint firstItem="BzD-Za-Bfq" firstAttribute="trailing" secondItem="iTf-oI-Eb1" secondAttribute="trailing" id="ZaL-Oh-bZz"/>
-                            <constraint firstItem="sfz-g4-90W" firstAttribute="bottom" secondItem="eh0-h3-ACJ" secondAttribute="bottom" id="a3M-8t-ENT"/>
-                            <constraint firstItem="eh0-h3-ACJ" firstAttribute="leading" secondItem="SOK-gn-feI" secondAttribute="leading" constant="16" id="awW-wt-sj6"/>
-                            <constraint firstItem="iTf-oI-Eb1" firstAttribute="top" secondItem="BzD-Za-Bfq" secondAttribute="top" id="bsD-Dj-HOD"/>
-                            <constraint firstItem="SOK-gn-feI" firstAttribute="top" secondItem="eh0-h3-ACJ" secondAttribute="bottom" constant="8" id="d8X-SJ-7gX"/>
+                            <constraint firstItem="BzD-Za-Bfq" firstAttribute="trailing" secondItem="Yo2-Qv-czj" secondAttribute="trailing" id="ZaL-Oh-bZz"/>
                             <constraint firstItem="SOK-gn-feI" firstAttribute="trailing" secondItem="iTf-oI-Eb1" secondAttribute="trailing" constant="-8" id="gN5-dI-XZT"/>
-                            <constraint firstItem="BzD-Za-Bfq" firstAttribute="leading" secondItem="iTf-oI-Eb1" secondAttribute="leading" id="oeQ-jV-bTY"/>
-                            <constraint firstItem="eh0-h3-ACJ" firstAttribute="top" secondItem="BzD-Za-Bfq" secondAttribute="top" constant="8" id="pfV-bt-JEJ"/>
-                            <constraint firstItem="eh0-h3-ACJ" firstAttribute="trailing" secondItem="sfz-g4-90W" secondAttribute="leading" constant="-16" id="u7O-TG-wYM"/>
+                            <constraint firstItem="BzD-Za-Bfq" firstAttribute="leading" secondItem="Yo2-Qv-czj" secondAttribute="leading" id="oeQ-jV-bTY"/>
+                            <constraint firstItem="gcu-7n-XEE" firstAttribute="leading" secondItem="Yo2-Qv-czj" secondAttribute="leading" id="pJp-uf-ZIp"/>
+                            <constraint firstAttribute="top" secondItem="BzD-Za-Bfq" secondAttribute="top" id="uVA-8r-ggf"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="eh0-h3-ACJ"/>
+                                <exclude reference="sfz-g4-90W"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="заметки" image="note.text" catalog="system" id="Qe6-jx-STj"/>
+                    <navigationItem key="navigationItem" id="Lhr-S3-AnE"/>
+                    <connections>
+                        <outlet property="customNavigationBar" destination="gcu-7n-XEE" id="bek-V1-J56"/>
+                        <outlet property="tableNotes" destination="SOK-gn-feI" id="qQa-9D-DLc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pAO-ta-e5x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="482.60869565217394" y="420.53571428571428"/>
-        </scene>
-        <!--hydrangea-->
-        <scene sceneID="Maj-qK-3FS">
-            <objects>
-                <viewController id="V9x-R4-zab" userLabel="hydrangea" customClass="HydrangeaViewController" customModule="HydrangeaGB" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ehO-aa-Lsz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="NBe-7s-4fe">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                            </imageView>
-                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qN0-Wc-4ce" userLabel="head" customClass="RoudingEdgesView" customModule="HydrangeaGB" customModuleProvider="target">
-                                <rect key="frame" x="24" y="52" width="366" height="44"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="гортензии" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBI-di-kg5">
-                                        <rect key="frame" x="0.0" y="0.0" width="366" height="44"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.86230272050000001" green="0.92783319949999998" blue="0.80390411620000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="BBI-di-kg5" secondAttribute="bottom" id="0jF-68-f7X"/>
-                                    <constraint firstItem="BBI-di-kg5" firstAttribute="leading" secondItem="qN0-Wc-4ce" secondAttribute="leading" id="Mdx-yZ-F1N"/>
-                                    <constraint firstAttribute="trailing" secondItem="BBI-di-kg5" secondAttribute="trailing" id="R72-fQ-Xf5"/>
-                                    <constraint firstItem="BBI-di-kg5" firstAttribute="top" secondItem="qN0-Wc-4ce" secondAttribute="top" id="hHH-sy-U2d"/>
-                                    <constraint firstAttribute="height" constant="44" id="kPP-Pv-QhF"/>
-                                </constraints>
-                            </view>
-                            <tableView clipsSubviews="YES" alpha="0.94999999999999996" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="beM-8Z-iEf" userLabel="table" customClass="RoudingEdgesTable" customModule="HydrangeaGB" customModuleProvider="target">
-                                <rect key="frame" x="8" y="104" width="398" height="701"/>
-                                <color key="backgroundColor" red="0.86230272050000001" green="0.92783319949999998" blue="0.80390411620000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="kp3-oT-1eE"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="NBe-7s-4fe" firstAttribute="leading" secondItem="kp3-oT-1eE" secondAttribute="leading" id="5WT-gf-Gsv"/>
-                            <constraint firstItem="qN0-Wc-4ce" firstAttribute="trailing" secondItem="beM-8Z-iEf" secondAttribute="trailing" constant="-16" id="8Fa-UC-Om0"/>
-                            <constraint firstItem="qN0-Wc-4ce" firstAttribute="top" secondItem="NBe-7s-4fe" secondAttribute="top" constant="8" id="H56-AN-J2j"/>
-                            <constraint firstItem="NBe-7s-4fe" firstAttribute="trailing" secondItem="kp3-oT-1eE" secondAttribute="trailing" id="KMS-YO-3rI"/>
-                            <constraint firstItem="kp3-oT-1eE" firstAttribute="top" secondItem="NBe-7s-4fe" secondAttribute="top" id="LzG-mI-1Gk"/>
-                            <constraint firstItem="beM-8Z-iEf" firstAttribute="bottom" secondItem="kp3-oT-1eE" secondAttribute="bottom" constant="-8" id="OGU-Hz-LBh"/>
-                            <constraint firstItem="beM-8Z-iEf" firstAttribute="leading" secondItem="kp3-oT-1eE" secondAttribute="leading" constant="8" id="P1e-y9-z9p"/>
-                            <constraint firstItem="NBe-7s-4fe" firstAttribute="bottom" secondItem="kp3-oT-1eE" secondAttribute="bottom" id="QPO-xh-Ihg"/>
-                            <constraint firstItem="beM-8Z-iEf" firstAttribute="trailing" secondItem="kp3-oT-1eE" secondAttribute="trailing" constant="-8" id="Qxk-3M-Ivd"/>
-                            <constraint firstItem="qN0-Wc-4ce" firstAttribute="leading" secondItem="beM-8Z-iEf" secondAttribute="leading" constant="16" id="U6k-h2-w3a"/>
-                            <constraint firstItem="beM-8Z-iEf" firstAttribute="top" secondItem="qN0-Wc-4ce" secondAttribute="bottom" constant="8" id="dQV-Gh-GBj"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="каталог" image="book.fill" catalog="system" id="4Wg-i0-EET"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="03d-Bx-cyT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="481.15942028985512" y="-342.85714285714283"/>
+            <point key="canvasLocation" x="1283" y="377"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Quc-X6-p5M">
@@ -176,8 +191,8 @@
                         <color key="backgroundColor" red="0.86230272050000001" green="0.92783319949999998" blue="0.80390411620000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="V9x-R4-zab" kind="relationship" relationship="viewControllers" id="IBD-Hs-W8J"/>
-                        <segue destination="S1t-Zs-JRX" kind="relationship" relationship="viewControllers" id="wHD-Vh-7oZ"/>
+                        <segue destination="9nr-OK-Jn3" kind="relationship" relationship="viewControllers" id="Zrh-Fd-pvs"/>
+                        <segue destination="aj0-Ja-eH4" kind="relationship" relationship="viewControllers" id="hax-yh-Nfx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qpi-jA-WTP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Note Detail View Controller-->
+        <scene sceneID="Qw1-gN-HpU">
+            <objects>
+                <viewController storyboardIdentifier="NoteDetailStoryboard" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3tB-I0-WDH" customClass="NoteDetailViewController" customModule="HydrangeaGB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AOM-Ki-Swk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.55000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="kUh-yJ-GUu">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhj-oW-xHd" customClass="NavigationBar" customModule="HydrangeaGB" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="98" id="Qoe-kS-3gm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Sjc-np-sQg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kUh-yJ-GUu" firstAttribute="trailing" secondItem="AOM-Ki-Swk" secondAttribute="trailing" id="DgE-6u-Ja8"/>
+                            <constraint firstItem="mhj-oW-xHd" firstAttribute="trailing" secondItem="kUh-yJ-GUu" secondAttribute="trailing" id="aPY-Pq-Hek"/>
+                            <constraint firstItem="mhj-oW-xHd" firstAttribute="leading" secondItem="kUh-yJ-GUu" secondAttribute="leading" id="nHn-kx-xJC"/>
+                            <constraint firstItem="kUh-yJ-GUu" firstAttribute="bottom" secondItem="Sjc-np-sQg" secondAttribute="bottom" id="sfM-Df-hz9"/>
+                            <constraint firstItem="mhj-oW-xHd" firstAttribute="top" secondItem="kUh-yJ-GUu" secondAttribute="top" id="yIT-xe-7AZ"/>
+                            <constraint firstItem="kUh-yJ-GUu" firstAttribute="leading" secondItem="AOM-Ki-Swk" secondAttribute="leading" id="zaI-BH-TKq"/>
+                            <constraint firstItem="kUh-yJ-GUu" firstAttribute="top" secondItem="AOM-Ki-Swk" secondAttribute="top" id="zvt-Or-zF8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FiS-kZ-e7q"/>
+                    <connections>
+                        <outlet property="customNavigationBar" destination="mhj-oW-xHd" id="SjG-2E-l4Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SBZ-g3-FUX" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2086" y="376"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background2" width="750" height="1624"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

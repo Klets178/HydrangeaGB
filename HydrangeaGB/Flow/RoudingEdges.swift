@@ -9,9 +9,10 @@ import UIKit
  class RoudingEdgesView: UIView {
     @IBInspectable var borderColor: UIColor = .gray
     @IBInspectable var borderWidth: CGFloat = 1.5
+     @IBInspectable var corner: CGFloat = 3
     
     override func awakeFromNib() {
-        self.layer.cornerRadius = self.frame.height / 3
+        self.layer.cornerRadius = self.frame.height / corner
         self.layer.masksToBounds = true
         self.layer.borderWidth = borderWidth
         self.layer.borderColor = borderColor.cgColor
@@ -24,7 +25,7 @@ class RoudingEdgesTable: UITableView {
    @IBInspectable var borderWidth: CGFloat = 1.5
    
    override func awakeFromNib() {
-       self.layer.cornerRadius = self.frame.height / 19
+       self.layer.cornerRadius = self.frame.height / 22
        self.layer.masksToBounds = true
        self.layer.borderWidth = borderWidth
        self.layer.borderColor = borderColor.cgColor
@@ -33,7 +34,7 @@ class RoudingEdgesTable: UITableView {
 }
 
 class RoudingEdgesButton: UIButton {
-    @IBInspectable var borderColor: UIColor = .white
+    @IBInspectable var borderColor: UIColor = .gray
     @IBInspectable var borderWidth: CGFloat = 1.5
     @IBInspectable var corner: CGFloat = 3
    
@@ -63,9 +64,10 @@ class RoudingEdgesLabel: UILabel {
 class RoudingEdgesImage: UIImageView {
    @IBInspectable var borderColor: UIColor = .gray
    @IBInspectable var borderWidth: CGFloat = 1.5
+    @IBInspectable var corner: CGFloat = 2
    
    override func awakeFromNib() {
-       self.layer.cornerRadius = self.frame.height / 2
+       self.layer.cornerRadius = self.frame.height / corner
        self.layer.masksToBounds = true
        self.layer.borderWidth = borderWidth
        self.layer.borderColor = borderColor.cgColor
