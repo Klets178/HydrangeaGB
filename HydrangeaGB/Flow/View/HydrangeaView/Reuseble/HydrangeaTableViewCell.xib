@@ -49,7 +49,7 @@
                 </subviews>
                 <color key="backgroundColor" red="0.86230272050000001" green="0.92783319949999998" blue="0.80390411620000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 <constraints>
-                    <constraint firstItem="kba-te-xJT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="9Kw-fj-SWF"/>
+                    <constraint firstItem="kba-te-xJT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="9Kw-fj-SWF"/>
                     <constraint firstItem="kba-te-xJT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="hHi-oH-jYc"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kba-te-xJT" secondAttribute="bottom" constant="15" id="uHq-7l-aav"/>
                     <constraint firstAttribute="trailing" secondItem="kba-te-xJT" secondAttribute="trailing" constant="16" id="wjW-s1-Pvc"/>

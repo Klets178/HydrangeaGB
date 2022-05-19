@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--hydrangea-->
+        <scene sceneID="pJS-bD-NRe">
+            <objects>
+                <viewController storyboardIdentifier="HydrangeaStoryboard" id="DwA-KI-bLc" userLabel="hydrangea" customClass="HydrangeaViewController" customModule="HydrangeaGB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ywW-vj-oLT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="82N-0j-ggU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Tp-GZ-47n" customClass="NavigationBar" customModule="HydrangeaGB" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="98" id="Kgh-aZ-NJh"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FAy-BW-YU6" userLabel="table" customClass="RoudingEdgesTable" customModule="HydrangeaGB" customModuleProvider="target">
+                                <rect key="frame" x="8" y="106" width="398" height="748"/>
+                                <color key="backgroundColor" red="0.86230272050000001" green="0.92783319949999998" blue="0.80390411620000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HYp-qK-hOP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6Tp-GZ-47n" secondAttribute="trailing" id="4fE-sK-M0H"/>
+                            <constraint firstItem="82N-0j-ggU" firstAttribute="bottom" secondItem="HYp-qK-hOP" secondAttribute="bottom" id="5Zf-Wy-Iaf"/>
+                            <constraint firstItem="6Tp-GZ-47n" firstAttribute="leading" secondItem="ywW-vj-oLT" secondAttribute="leading" id="BSu-7Y-nqC"/>
+                            <constraint firstItem="FAy-BW-YU6" firstAttribute="leading" secondItem="HYp-qK-hOP" secondAttribute="leading" constant="8" id="OUb-r4-NFj"/>
+                            <constraint firstItem="FAy-BW-YU6" firstAttribute="top" secondItem="6Tp-GZ-47n" secondAttribute="bottom" constant="8" id="VVD-bd-Qc4"/>
+                            <constraint firstAttribute="top" secondItem="6Tp-GZ-47n" secondAttribute="top" id="Wej-du-efh"/>
+                            <constraint firstItem="FAy-BW-YU6" firstAttribute="trailing" secondItem="HYp-qK-hOP" secondAttribute="trailing" constant="-8" id="aHE-E4-UJO"/>
+                            <constraint firstItem="FAy-BW-YU6" firstAttribute="bottom" secondItem="HYp-qK-hOP" secondAttribute="bottom" constant="-8" id="djj-Fc-ugp"/>
+                            <constraint firstItem="82N-0j-ggU" firstAttribute="top" secondItem="HYp-qK-hOP" secondAttribute="top" id="scq-Hb-46O"/>
+                            <constraint firstItem="82N-0j-ggU" firstAttribute="leading" secondItem="ywW-vj-oLT" secondAttribute="leading" id="wGi-jt-XYQ"/>
+                            <constraint firstItem="82N-0j-ggU" firstAttribute="trailing" secondItem="ywW-vj-oLT" secondAttribute="trailing" id="xUd-91-dlZ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="каталог" image="book.fill" catalog="system" id="sqV-cF-tQA"/>
+                    <navigationItem key="navigationItem" id="PNn-Z5-39G"/>
+                    <connections>
+                        <outlet property="customNavigationBar" destination="6Tp-GZ-47n" id="Uvy-IQ-cFv"/>
+                        <outlet property="tableHydrangea" destination="FAy-BW-YU6" id="SCW-tE-pkz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2yV-fV-Fod" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1282.608695652174" y="-293.30357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background2" width="300" height="650"/>
+        <image name="book.fill" catalog="system" width="128" height="95"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

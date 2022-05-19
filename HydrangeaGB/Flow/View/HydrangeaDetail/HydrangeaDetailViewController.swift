@@ -76,7 +76,7 @@ extension HydrangeaDetailViewController {
     func toPhotoView(row: Int) {
         let storyboard = UIStoryboard(name: "PhotoDetailStoryboard", bundle: nil)
         guard
-            let photoViewController = storyboard.instantiateViewController(identifier: "PhotoDetailViewController") as? PhotoDetailViewController
+            let photoViewController = storyboard.instantiateViewController(identifier: "PhotoDetailStoryboard") as? PhotoDetailViewController
         else { return }
         photoViewController.photo = character.photo[row]
 
