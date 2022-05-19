@@ -9,6 +9,8 @@ import UIKit
 @objc protocol NavigationBarDelegate: AnyObject {
     @objc optional func backAction()
     @objc optional func addAction()
+    @objc optional func searchAction()
+    @objc optional func searchBarAction()
 }
 
 
@@ -21,6 +23,9 @@ class NavigationBar: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var searchButton: UIButton!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,6 +54,10 @@ class NavigationBar: UIView {
     
     @IBAction func goNext(_ sender: UIButton) {
         delegate?.addAction?()
+    }
+    
+    @IBAction func goSearch(_ sender: UIButton) {
+        delegate?.searchAction?()
     }
 }
 

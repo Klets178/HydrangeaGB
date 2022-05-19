@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,6 +15,8 @@
                 <outlet property="addButton" destination="2R8-Ou-EKy" id="5a8-ey-6Z4"/>
                 <outlet property="backButton" destination="rtt-Yp-PN2" id="h87-XF-aE8"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="ceb-lx-HYu"/>
+                <outlet property="searchBar" destination="eCg-7C-kTG" id="9rQ-g5-faJ"/>
+                <outlet property="searchButton" destination="yhd-bP-qyx" id="3HC-zc-l4K"/>
                 <outlet property="titleLabel" destination="EHH-nY-Vo5" id="hkd-ia-Bu1"/>
             </connections>
         </placeholder>
@@ -22,10 +25,6 @@
             <rect key="frame" x="0.0" y="0.0" width="677" height="104"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XrU-qO-Znd">
-                    <rect key="frame" x="0.0" y="0.0" width="677" height="104"/>
-                    <color key="backgroundColor" red="0.86230272050000001" green="0.92783319949999998" blue="0.80390411620000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                </view>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtt-Yp-PN2" userLabel="backButton" customClass="RoudingEdgesButton" customModule="HydrangeaGB" customModuleProvider="target">
                     <rect key="frame" x="8" y="52" width="40" height="40"/>
                     <color key="backgroundColor" red="0.86230272050000001" green="0.92783319949999998" blue="0.80390411620000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -61,33 +60,60 @@
                         <action selector="goNext:" destination="-1" eventType="touchUpInside" id="KEF-7x-tdv"/>
                     </connections>
                 </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhd-bP-qyx" userLabel="searchButton" customClass="RoudingEdgesButton" customModule="HydrangeaGB" customModuleProvider="target">
+                    <rect key="frame" x="629" y="52" width="40" height="40"/>
+                    <color key="backgroundColor" red="0.86230272050000001" green="0.92783319949999998" blue="0.80390411620000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="yhd-bP-qyx" secondAttribute="height" id="ic3-QI-IOf"/>
+                    </constraints>
+                    <state key="normal" image="magnifyingglass" catalog="system"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="corner">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="goNext:" destination="-1" eventType="touchUpInside" id="WCU-TS-haI"/>
+                        <action selector="goSearch:" destination="-1" eventType="touchUpInside" id="MhW-BU-Ox3"/>
+                    </connections>
+                </button>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHH-nY-Vo5" userLabel="title">
                     <rect key="frame" x="56" y="52" width="565" height="40"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="yaE-Ul-0VM"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <searchBar hidden="YES" contentMode="redraw" placeholder="поиск" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCg-7C-kTG" userLabel="searchBar" customClass="RoudingEdgesSearchBar" customModule="HydrangeaGB" customModuleProvider="target">
+                    <rect key="frame" x="56" y="52" width="565" height="40"/>
+                    <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="15" vertical="15"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="ColorHydrandea"/>
             <constraints>
                 <constraint firstItem="EHH-nY-Vo5" firstAttribute="leading" secondItem="rtt-Yp-PN2" secondAttribute="trailing" constant="8" id="20a-Qq-Ok9"/>
                 <constraint firstItem="2R8-Ou-EKy" firstAttribute="bottom" secondItem="EHH-nY-Vo5" secondAttribute="bottom" id="4dy-1X-pmh"/>
-                <constraint firstItem="XrU-qO-Znd" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="97d-mu-Mxt"/>
+                <constraint firstItem="eCg-7C-kTG" firstAttribute="trailing" secondItem="EHH-nY-Vo5" secondAttribute="trailing" id="5SB-tG-6Sd"/>
+                <constraint firstItem="yhd-bP-qyx" firstAttribute="leading" secondItem="2R8-Ou-EKy" secondAttribute="leading" id="9IN-ie-G0l"/>
                 <constraint firstItem="rtt-Yp-PN2" firstAttribute="bottom" secondItem="EHH-nY-Vo5" secondAttribute="bottom" id="Dpe-Y9-PFi"/>
+                <constraint firstItem="yhd-bP-qyx" firstAttribute="bottom" secondItem="2R8-Ou-EKy" secondAttribute="bottom" id="GhN-5B-hQc"/>
                 <constraint firstItem="EHH-nY-Vo5" firstAttribute="trailing" secondItem="2R8-Ou-EKy" secondAttribute="leading" constant="-8" id="Ne6-5H-qOX"/>
                 <constraint firstItem="rtt-Yp-PN2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="OrF-Y7-aIF"/>
                 <constraint firstItem="rtt-Yp-PN2" firstAttribute="top" secondItem="EHH-nY-Vo5" secondAttribute="top" id="RQw-tk-gN8"/>
-                <constraint firstItem="XrU-qO-Znd" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="Uqa-FE-qrD"/>
+                <constraint firstItem="yhd-bP-qyx" firstAttribute="width" secondItem="yhd-bP-qyx" secondAttribute="height" id="TQa-zv-KMx"/>
                 <constraint firstItem="EHH-nY-Vo5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="aNE-Ws-ece"/>
-                <constraint firstItem="XrU-qO-Znd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ebq-5E-OQq"/>
-                <constraint firstItem="XrU-qO-Znd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fMS-Hu-a56"/>
                 <constraint firstItem="2R8-Ou-EKy" firstAttribute="top" secondItem="EHH-nY-Vo5" secondAttribute="top" id="faZ-IG-SPf"/>
+                <constraint firstItem="eCg-7C-kTG" firstAttribute="leading" secondItem="EHH-nY-Vo5" secondAttribute="leading" id="fqZ-Ct-fdY"/>
+                <constraint firstItem="eCg-7C-kTG" firstAttribute="top" secondItem="EHH-nY-Vo5" secondAttribute="top" id="kYf-WN-EQu"/>
+                <constraint firstItem="yhd-bP-qyx" firstAttribute="top" secondItem="2R8-Ou-EKy" secondAttribute="top" id="me7-N5-6RA"/>
+                <constraint firstItem="yhd-bP-qyx" firstAttribute="trailing" secondItem="2R8-Ou-EKy" secondAttribute="trailing" id="rO2-CK-g2Q"/>
                 <constraint firstItem="2R8-Ou-EKy" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-8" id="sGB-vU-IrX"/>
+                <constraint firstItem="eCg-7C-kTG" firstAttribute="bottom" secondItem="EHH-nY-Vo5" secondAttribute="bottom" id="vt6-Dg-aZm"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -96,6 +122,10 @@
     </objects>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <namedColor name="ColorHydrandea">
+            <color red="0.86274509803921573" green="0.92941176470588238" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

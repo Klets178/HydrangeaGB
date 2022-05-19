@@ -33,6 +33,9 @@
 		63DEA298283021F000D5F11D /* HydrangeaDetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DEA297283021F000D5F11D /* HydrangeaDetailStoryboard.storyboard */; };
 		63DEA29B283185DC00D5F11D /* ParsingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEA29A283185DC00D5F11D /* ParsingData.swift */; };
 		63DEA29D28328C2700D5F11D /* LogMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEA29C28328C2600D5F11D /* LogMessage.swift */; };
+		63DEA29F2832D8C300D5F11D /* HydrangeaStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DEA29E2832D8C200D5F11D /* HydrangeaStoryboard.storyboard */; };
+		63DEA2A12832D9F600D5F11D /* NotesStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DEA2A02832D9F600D5F11D /* NotesStoryboard.storyboard */; };
+		63DEA2FB283432A100D5F11D /* SearchFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEA2FA283432A100D5F11D /* SearchFooter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		63DEA297283021F000D5F11D /* HydrangeaDetailStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HydrangeaDetailStoryboard.storyboard; sourceTree = "<group>"; };
 		63DEA29A283185DC00D5F11D /* ParsingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingData.swift; sourceTree = "<group>"; };
 		63DEA29C28328C2600D5F11D /* LogMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogMessage.swift; sourceTree = "<group>"; };
+		63DEA29E2832D8C200D5F11D /* HydrangeaStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HydrangeaStoryboard.storyboard; sourceTree = "<group>"; };
+		63DEA2A02832D9F600D5F11D /* NotesStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotesStoryboard.storyboard; sourceTree = "<group>"; };
+		63DEA2FA283432A100D5F11D /* SearchFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFooter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				63CBFA692821B4B200CD4CE5 /* HydrangeaViewController.swift */,
+				63DEA29E2832D8C200D5F11D /* HydrangeaStoryboard.storyboard */,
 				63A0951C282BC90D0035808E /* Reuseble */,
 			);
 			path = HydrangeaView;
@@ -107,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				63CBFA672821B44800CD4CE5 /* NotesViewController.swift */,
+				63DEA2A02832D9F600D5F11D /* NotesStoryboard.storyboard */,
 			);
 			path = NotesView;
 			sourceTree = "<group>";
@@ -205,6 +213,7 @@
 				63A09527282E54C00035808E /* Extensions */,
 				63CBFA662821B3AF00CD4CE5 /* View */,
 				63CBFA6428219DFB00CD4CE5 /* RoudingEdges.swift */,
+				63DEA2FA283432A100D5F11D /* SearchFooter.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -294,7 +303,9 @@
 				6345496A28240A9C0053239E /* Hydrangea.json in Resources */,
 				63CBFA59281B187C00CD4CE5 /* Assets.xcassets in Resources */,
 				63DEA298283021F000D5F11D /* HydrangeaDetailStoryboard.storyboard in Resources */,
+				63DEA29F2832D8C300D5F11D /* HydrangeaStoryboard.storyboard in Resources */,
 				63A0951828299AEB0035808E /* NavigationBar.xib in Resources */,
+				63DEA2A12832D9F600D5F11D /* NotesStoryboard.storyboard in Resources */,
 				63A09520282BDBCF0035808E /* PhotoCollectionViewCell.xib in Resources */,
 				63DEA296282E8CDD00D5F11D /* PhotoDetailStoryboard.storyboard in Resources */,
 				6345497528242B420053239E /* HydrangeaTableViewCell.xib in Resources */,
@@ -315,6 +326,7 @@
 				63CBFA54281B187A00CD4CE5 /* HydrangeaDetailViewController.swift in Sources */,
 				63A09524282D924C0035808E /* TableView+Extension.swift in Sources */,
 				63DEA29B283185DC00D5F11D /* ParsingData.swift in Sources */,
+				63DEA2FB283432A100D5F11D /* SearchFooter.swift in Sources */,
 				63CBFA6528219DFB00CD4CE5 /* RoudingEdges.swift in Sources */,
 				63454980282844400053239E /* NotesViewController.swift in Sources */,
 				63A09522282C4C600035808E /* PhotoDetailViewController.swift in Sources */,

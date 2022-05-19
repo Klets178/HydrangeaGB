@@ -13,7 +13,7 @@
         <!--Hydrangea Detail View Controller-->
         <scene sceneID="gNT-rd-weg">
             <objects>
-                <viewController storyboardIdentifier="HydrangeaDetailViewController" modalPresentationStyle="fullScreen" id="YmE-r5-IlT" customClass="HydrangeaDetailViewController" customModule="HydrangeaGB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HydrangeaDetailStoryboard" modalPresentationStyle="fullScreen" id="YmE-r5-IlT" customClass="HydrangeaDetailViewController" customModule="HydrangeaGB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="75I-EH-ipN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +120,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background2" width="750" height="1624"/>
+        <image name="background2" width="300" height="650"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

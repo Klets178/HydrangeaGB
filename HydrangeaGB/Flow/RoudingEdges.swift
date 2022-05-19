@@ -6,12 +6,32 @@
 
 import UIKit
 
- class RoudingEdgesView: UIView {
+private let colorHydrangea = UIColor(named: "ColorHydrandea")
+
+
+class RoudingEdgesSearchBar: UISearchBar {
     @IBInspectable var borderColor: UIColor = .gray
     @IBInspectable var borderWidth: CGFloat = 1.5
+    @IBInspectable var corner: CGFloat = 3
+   
+   override func awakeFromNib() {
+       self.barTintColor = colorHydrangea
+       self.searchTextField.backgroundColor = colorHydrangea
+       self.layer.cornerRadius = self.frame.height / corner
+       self.layer.masksToBounds = true
+       self.layer.borderWidth = borderWidth
+       self.layer.borderColor = borderColor.cgColor
+   }
+   
+}
+
+ class RoudingEdgesView: UIView {
+     @IBInspectable var borderColor: UIColor = .gray
+     @IBInspectable var borderWidth: CGFloat = 1.5
      @IBInspectable var corner: CGFloat = 3
     
     override func awakeFromNib() {
+        self.backgroundColor = colorHydrangea
         self.layer.cornerRadius = self.frame.height / corner
         self.layer.masksToBounds = true
         self.layer.borderWidth = borderWidth
@@ -21,11 +41,11 @@ import UIKit
 }
 
 class RoudingEdgesTable: UITableView {
-   @IBInspectable var borderColor: UIColor = .gray
-   @IBInspectable var borderWidth: CGFloat = 1.5
+    @IBInspectable var borderColor: UIColor = .gray
+    @IBInspectable var borderWidth: CGFloat = 1.5
    
    override func awakeFromNib() {
-       self.layer.cornerRadius = self.frame.height / 22
+       self.layer.cornerRadius = self.frame.height / 32
        self.layer.masksToBounds = true
        self.layer.borderWidth = borderWidth
        self.layer.borderColor = borderColor.cgColor
@@ -47,7 +67,6 @@ class RoudingEdgesButton: UIButton {
    
 }
 
-
 class RoudingEdgesLabel: UILabel {
     @IBInspectable var borderColor: UIColor = .white
     @IBInspectable var borderWidth: CGFloat = 1.5
@@ -62,8 +81,8 @@ class RoudingEdgesLabel: UILabel {
 }
 
 class RoudingEdgesImage: UIImageView {
-   @IBInspectable var borderColor: UIColor = .gray
-   @IBInspectable var borderWidth: CGFloat = 1.5
+    @IBInspectable var borderColor: UIColor = .gray
+    @IBInspectable var borderWidth: CGFloat = 1.5
     @IBInspectable var corner: CGFloat = 2
    
    override func awakeFromNib() {
