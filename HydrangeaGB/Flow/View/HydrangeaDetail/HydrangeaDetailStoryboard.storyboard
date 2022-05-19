@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -60,25 +61,35 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gni-VX-7GL" customClass="RoudingEdgesView" customModule="HydrangeaGB" customModuleProvider="target">
                                 <rect key="frame" x="8" y="248" width="398" height="606"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXL-q2-nVk">
-                                        <rect key="frame" x="35" y="128" width="320" height="382"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgT-oz-Q2U">
-                                        <rect key="frame" x="8" y="45" width="382" height="53"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KbT-xy-zMw">
+                                        <rect key="frame" x="20" y="20" width="358" height="566"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgT-oz-Q2U" customClass="RoudingEdgesLabel" customModule="HydrangeaGB" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="358" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="otL-Q9-1gh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fx-aD-0cN">
+                                                <rect key="frame" x="0.0" y="64" width="358" height="502"/>
+                                                <color key="backgroundColor" name="ColorHydrandea"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.86230272050000001" green="0.92783319949999998" blue="0.80390411620000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="RgT-oz-Q2U" firstAttribute="leading" secondItem="Gni-VX-7GL" secondAttribute="leading" constant="20" id="TRy-4r-8D4"/>
-                                    <constraint firstItem="RgT-oz-Q2U" firstAttribute="top" secondItem="Gni-VX-7GL" secondAttribute="top" constant="20" id="qf6-yR-4vx"/>
-                                    <constraint firstItem="RgT-oz-Q2U" firstAttribute="trailing" secondItem="Gni-VX-7GL" secondAttribute="trailing" constant="-20" id="w9W-qm-kz1"/>
+                                    <constraint firstAttribute="bottom" secondItem="KbT-xy-zMw" secondAttribute="bottom" constant="20" id="541-nM-GkK"/>
+                                    <constraint firstItem="KbT-xy-zMw" firstAttribute="leading" secondItem="Gni-VX-7GL" secondAttribute="leading" constant="20" id="QyN-pQ-U0p"/>
+                                    <constraint firstAttribute="trailing" secondItem="KbT-xy-zMw" secondAttribute="trailing" constant="20" id="ULs-ds-jXO"/>
+                                    <constraint firstItem="KbT-xy-zMw" firstAttribute="top" secondItem="Gni-VX-7GL" secondAttribute="top" constant="20" id="pXW-Ow-Zz0"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="corner">
@@ -111,7 +122,7 @@
                         <outlet property="customNavigationBar" destination="Vk2-kt-qxG" id="3Oc-hy-iHa"/>
                         <outlet property="photoCollection" destination="k5d-CZ-izS" id="Psq-Q8-aVY"/>
                         <outlet property="subnameLabel" destination="RgT-oz-Q2U" id="FKc-Aa-I5l"/>
-                        <outlet property="textLabel" destination="YXL-q2-nVk" id="RZh-DU-gyY"/>
+                        <outlet property="textView" destination="5Fx-aD-0cN" id="it6-Cm-KZ2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ghe-zf-a8F" sceneMemberID="firstResponder"/>
@@ -121,6 +132,12 @@
     </scenes>
     <resources>
         <image name="background2" width="300" height="650"/>
+        <namedColor name="ColorHydrandea">
+            <color red="0.86274509803921573" green="0.92941176470588238" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

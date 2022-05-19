@@ -26,6 +26,10 @@
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O1J-Rs-umG">
                                 <rect key="frame" x="0.0" y="98" width="414" height="764"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="qlc-vq-8in" appends="YES" id="nqm-eM-ZPg"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pRo-n3-ED3"/>
@@ -44,9 +48,15 @@
                     <connections>
                         <outlet property="customNavigationBar" destination="x5P-nS-hVZ" id="vL7-ga-YnO"/>
                         <outlet property="photoImage" destination="O1J-Rs-umG" id="xKT-Ci-yJ7"/>
+                        <outlet property="swipeToRigth" destination="qlc-vq-8in" id="aRE-8t-Uyj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H8M-wi-L4S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="qlc-vq-8in">
+                    <connections>
+                        <action selector="swipeToRightAction:" destination="PFn-sf-wia" id="XFm-oX-4Xf"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2887" y="-293"/>
         </scene>
