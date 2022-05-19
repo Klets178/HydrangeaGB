@@ -68,7 +68,7 @@ class RoudingEdgesButton: UIButton {
 }
 
 class RoudingEdgesLabel: UILabel {
-    @IBInspectable var borderColor: UIColor = .white
+    @IBInspectable var borderColor: UIColor = .systemGreen
     @IBInspectable var borderWidth: CGFloat = 1.5
    
    override func awakeFromNib() {

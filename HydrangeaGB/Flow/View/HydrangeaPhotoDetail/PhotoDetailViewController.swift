@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class PhotoDetailViewController: UIViewController, UIGestureRecognizerDelegate {
 
     var idPhoto: Int? = nil
     lazy var photo = Photo(id: 0, name: String())
@@ -15,16 +15,24 @@ class PhotoDetailViewController: UIViewController {
     @IBOutlet weak var customNavigationBar: NavigationBar!
     @IBOutlet weak var photoImage: UIImageView!
     
+    @IBOutlet var swipeToRigth: UISwipeGestureRecognizer!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         customNavigationBar.delegate = self
-        
+        swipeToRigth.delegate = self
+        self.view.addGestureRecognizer(swipeToRigth)
+                
         customNavigationBar.backButton.doVisible()
         customNavigationBar.titleLabel.doHidden()
         
         photoImage.image = UIImage(named: photo.name)
 
+    }
+    
+    
+    @IBAction func swipeToRightAction(_ sender: Any) {
+        photoImage.image = UIImage(named: "icon194")
     }
     
 }

@@ -20,7 +20,7 @@ class HydrangeaDetailViewController: UIViewController {
     @IBOutlet weak var photoCollection: UICollectionView!
     
     @IBOutlet weak var subnameLabel: UILabel!
-    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,7 +88,7 @@ extension HydrangeaDetailViewController {
 extension HydrangeaDetailViewController {
     func loadInfoHydrangea() {
         customNavigationBar.titleLabel.text = character.name
-        textLabel.text = character.text
+        textView.text = character.text
         subnameLabel.text = character.subname
     }
     
