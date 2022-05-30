@@ -16,7 +16,7 @@ struct LogMessage: ExpressibleByStringLiteral {
     let message: String
     
     init(stringLiteral value: String) {
-        self.message = value
+        message = value
     }
 }
 

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="108" id="KGk-i7-Jjw" customClass="NotesTableViewCell" customModule="HydrangeaGB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="108"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="343" height="108"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Cat-ls-27J">
+                        <rect key="frame" x="16" y="8" width="147.5" height="92"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d2n-L9-Ipw">
+                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e8K-bf-HOO" userLabel="dateStack">
+                                        <rect key="frame" x="0.0" y="8" width="90" height="74"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgF-Ty-wgL">
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="17"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                <color key="textColor" red="0.3208173513" green="0.41885989899999998" blue="0.19995331760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9d-2D-or3">
+                                                <rect key="frame" x="0.0" y="25" width="90" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" red="0.3208173513" green="0.41885989899999998" blue="0.19995331760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W33-jb-rDb">
+                                                <rect key="frame" x="0.0" y="53.5" width="90" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.3208173513" green="0.41885989899999998" blue="0.19995331760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="ColorHydrandea"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="e8K-bf-HOO" secondAttribute="trailing" id="QX7-j1-qi9"/>
+                                    <constraint firstAttribute="width" constant="90" id="Sh1-Xy-K5u"/>
+                                    <constraint firstAttribute="bottom" secondItem="e8K-bf-HOO" secondAttribute="bottom" constant="8" id="SoR-z4-RGY"/>
+                                    <constraint firstAttribute="width" secondItem="d2n-L9-Ipw" secondAttribute="height" id="YJB-E6-T6Q"/>
+                                    <constraint firstItem="e8K-bf-HOO" firstAttribute="top" secondItem="d2n-L9-Ipw" secondAttribute="top" constant="8" id="gP2-52-fR7"/>
+                                    <constraint firstItem="e8K-bf-HOO" firstAttribute="leading" secondItem="d2n-L9-Ipw" secondAttribute="leading" id="xrY-Ag-nIa"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.3208173513" green="0.41885989899999998" blue="0.19995331760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BO-bL-d4y">
+                                <rect key="frame" x="106" y="0.0" width="41.5" height="92"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="3BO-bL-d4y" secondAttribute="bottom" id="IZo-CG-eHf"/>
+                            <constraint firstAttribute="trailing" secondItem="3BO-bL-d4y" secondAttribute="trailing" id="rB9-Aa-Jcg"/>
+                        </constraints>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TP9-1N-Gca">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="108"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="JQZ-NW-oaW"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" id="wKQ-dg-i05"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" name="ColorHydrandea"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="TP9-1N-Gca" secondAttribute="trailing" constant="345" id="MSZ-Cv-1gL"/>
+                    <constraint firstItem="TP9-1N-Gca" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="maX-cm-1SO"/>
+                </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                        <real key="value" value="1"/>
+                    </userDefinedRuntimeAttribute>
+                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                        <color key="value" red="0.3208173513" green="0.41885989899999998" blue="0.19995331760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </userDefinedRuntimeAttribute>
+                </userDefinedRuntimeAttributes>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <constraints>
+                <constraint firstItem="TP9-1N-Gca" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" id="4E2-h7-VlG"/>
+                <constraint firstItem="H2p-sc-9uM" firstAttribute="bottom" secondItem="Cat-ls-27J" secondAttribute="bottom" constant="8" id="CD7-NA-X3a"/>
+                <constraint firstItem="Cat-ls-27J" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="GH1-hb-Lm7"/>
+                <constraint firstItem="H2p-sc-9uM" firstAttribute="trailing" secondItem="Cat-ls-27J" secondAttribute="trailing" constant="16" id="QEx-sA-UFb"/>
+                <constraint firstItem="Cat-ls-27J" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="aYi-xN-K3v"/>
+                <constraint firstItem="TP9-1N-Gca" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vml-ZQ-spl"/>
+            </constraints>
+            <connections>
+                <outlet property="noteDay" destination="sgF-Ty-wgL" id="wqO-DD-Wwe"/>
+                <outlet property="noteTitle" destination="3BO-bL-d4y" id="JFv-u8-OcI"/>
+                <outlet property="noteWeek" destination="H9d-2D-or3" id="gF9-XV-OWa"/>
+                <outlet property="noteYear" destination="W33-jb-rDb" id="elG-DJ-JaM"/>
+            </connections>
+            <point key="canvasLocation" x="42.753623188405797" y="85.044642857142847"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="ColorHydrandea">
+            <color red="0.86299997568130493" green="0.92900002002716064" blue="0.80400002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

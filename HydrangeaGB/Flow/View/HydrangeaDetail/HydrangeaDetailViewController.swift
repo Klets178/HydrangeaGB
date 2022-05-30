@@ -7,14 +7,9 @@
 
 import UIKit
 
-/// # HydrangeaDetailViewController
-/// - subnameLabel -  subname Hydrangea
-/// - textLabel          -  text Hydrangea
-///
-///
 class HydrangeaDetailViewController: UIViewController {
     
-    lazy var character = Character(id: 0, photo: [Photo](), avatar: "", name: "", subname: "", text: "")
+    var character = Character(id: 0, photo: [Photo](), avatar: "", name: "", subname: "", text: "")
         
     @IBOutlet weak var customNavigationBar: NavigationBar!
     @IBOutlet weak var photoCollection: UICollectionView!
@@ -25,25 +20,33 @@ class HydrangeaDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setPhotoCollection()
+        setCustomNavigationBar()
+        loadInfoHydrangea()
+    }
+}
+
+// MARK:  настройка photoCollection
+extension HydrangeaDetailViewController {
+    func setPhotoCollection() {
         photoCollection.delegate = self
         photoCollection.dataSource = self
-        
-        customNavigationBar.delegate = self
-        
         photoCollection.registerCell(type: PhotoCollectionViewCell.self)
-                
-        customNavigationBar.backButton.doVisible()
-        
-        loadInfoHydrangea()
-
     }
-    
+}
+
+// MARK:  настройка CustomNavigationBar
+extension HydrangeaDetailViewController {
+    func setCustomNavigationBar() {
+        customNavigationBar.delegate = self
+        customNavigationBar.backButton?.hiddenFalse()
+    }
 }
 
 // Кнопка Back
 extension HydrangeaDetailViewController: NavigationBarDelegate {
     func backAction() {
-            self.navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -76,20 +79,18 @@ extension HydrangeaDetailViewController {
     func toPhotoView(row: Int) {
         let storyboard = UIStoryboard(name: "PhotoDetailStoryboard", bundle: nil)
         guard
-            let photoViewController = storyboard.instantiateViewController(identifier: "PhotoDetailStoryboard") as? PhotoDetailViewController
+            let photoController = storyboard.instantiateViewController(identifier: "PhotoDetailStoryboard") as? PhotoDetailViewController
         else { return }
-        photoViewController.photo = character.photo[row]
-
-        show(photoViewController, sender: nil)
+        photoController.images = character.photo
+        navigationController?.pushViewController(photoController, animated: true)
     }
 }
 
 // показываем информацию о гортензии
 extension HydrangeaDetailViewController {
     func loadInfoHydrangea() {
-        customNavigationBar.titleLabel.text = character.name
+        customNavigationBar.titleLabel?.text = character.name
         textView.text = character.text
         subnameLabel.text = character.subname
     }
-    
 }
