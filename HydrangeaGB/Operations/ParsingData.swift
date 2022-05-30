@@ -25,9 +25,9 @@ class ParsingDataJson {
     }
     
     
-     func parseJSON(jsonData: Data) -> HydrangeaList? {
+     func parseJSON(jsonData: Data) -> HydrangeaModel? {
         do {
-            var data = try JSONDecoder().decode(HydrangeaList.self, from: jsonData)
+            var data = try JSONDecoder().decode(HydrangeaModel.self, from: jsonData)
             data.lists.sort(by: { $0.name < $1.name })
             return data
         } catch {

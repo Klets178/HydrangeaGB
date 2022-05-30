@@ -1,5 +1,5 @@
 //
-//  HydrangeaList.swift
+//  HydrangeaModel.swift
 //  HydrangeaGB
 //
 //  Created by KKK on 05.05.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct HydrangeaList: Codable {
+public struct HydrangeaModel: Codable {
     public var info: Info
     public var lists: [Character]
 

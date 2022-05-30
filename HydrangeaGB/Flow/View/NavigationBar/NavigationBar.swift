@@ -14,7 +14,7 @@ import UIKit
 }
 
 
-@IBDesignable
+//@IBDesignable
 class NavigationBar: UIView {
     
     weak var delegate: NavigationBarDelegate?
@@ -34,18 +34,16 @@ class NavigationBar: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+//        print(coder)
         commonInit()
     }
-    
+        
     private func commonInit() {
         let bundle = Bundle(for: NavigationBar.self)
         bundle.loadNibNamed("NavigationBar", owner: self, options: nil)
-        contentView.frame = self.bounds
+        contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(contentView)
-        
-//        backButton.isHidden = true
-//        addButton.isHidden = true
     }
     
     @IBAction func goBack(_ sender: UIButton) {
@@ -61,16 +59,15 @@ class NavigationBar: UIView {
     }
 }
 
-
 extension UIButton {
-    func doVisible() {
+    func hiddenFalse() {
         let button = self
         button.isHidden = false
     }
 }
 
 extension UILabel {
-    func doHidden() {
+    func hiddenTrue() {
         let label = self
         label.isHidden = true
     }

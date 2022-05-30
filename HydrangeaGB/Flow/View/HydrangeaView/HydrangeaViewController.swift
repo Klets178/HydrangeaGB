@@ -13,48 +13,51 @@ class HydrangeaViewController: UIViewController, NavigationBarDelegate {
     private var hydraFiltered: [Character] = []
     
     private var searchBarIsEmpty: Bool {
-        guard let text = customNavigationBar.searchBar.text else { return false }
+        guard let text = customNavigationBar.searchBar?.text else { return true }
         return text.isEmpty
     }
+    
     private var isFiltering: Bool {
         return !searchBarIsEmpty
     }
     
-    var isViewSercheBar: Bool = false
+    private var isViewSercheBar: Bool = false
     
     @IBOutlet weak var customNavigationBar: NavigationBar!
     @IBOutlet weak var tableHydrangea: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-               
-        customNavigationBar.delegate = self
         
-        tableHydrangea.delegate = self
-        tableHydrangea.dataSource = self
-        customNavigationBar.searchBar.delegate = self
-        
-        tableHydrangea.registerCell(type: HydrangeaTableViewCell.self)
-        
-        customNavigationBar.titleLabel.text = "ГОРТЕНЗИИ"
-        customNavigationBar.searchButton.doVisible()
-        
-        hideKeyboardWhenTappedAround()
-                
-    }
-    
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
         
         loadFromJson()
+        setTableHydrangea()
+        setCustomNavigationBar()
+        hideKeyboardWhenTappedAround()
     }
-
 }
 
-//
+// MARK:  настройка tableHydrangea
+extension HydrangeaViewController {
+    func setTableHydrangea() {
+        tableHydrangea.delegate = self
+        tableHydrangea.dataSource = self
+        tableHydrangea.registerCell(type: HydrangeaTableViewCell.self)
+    }
+}
+
+// MARK:  настройка CustomNavigationBar
+extension HydrangeaViewController {
+    func setCustomNavigationBar() {
+        customNavigationBar.delegate = self
+        customNavigationBar.searchBar?.delegate = self
+        customNavigationBar.titleLabel?.text = "ГОРТЕНЗИИ"
+        customNavigationBar.searchButton?.hiddenFalse()
+    }
+}
+
+//MARK: Загрузка loadFromJson
 extension HydrangeaViewController {
     func loadFromJson() {
         guard
@@ -89,7 +92,6 @@ extension HydrangeaViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         toDetail(row: indexPath.row)
     }
-    
 }
 
 // MARK: - Gesture Delegate
@@ -97,9 +99,7 @@ extension HydrangeaViewController: UIGestureRecognizerDelegate {
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         return self == self.navigationController?.topViewController ? false : true
     }
-    
 }
-
 
 // MARK: - goto HydrangeaDetailStoryboard
 extension HydrangeaViewController {
@@ -114,9 +114,8 @@ extension HydrangeaViewController {
         } else  {
             detailViewController.character = hydraList[row]
         }
-        
-        show(detailViewController, sender: nil)
-    }
+        navigationController?.pushViewController(detailViewController, animated: true)
+     }
 }
 
 // MARK: - UISearchBarDelegate  Delegate
@@ -125,52 +124,8 @@ extension HydrangeaViewController: UISearchBarDelegate {
         hydraFiltered = searchText.isEmpty ? hydraList : hydraList.filter { (item: Character) -> Bool in
             return item.name.lowercased().contains(searchText.lowercased())
         }
-
         tableHydrangea.reloadData()
     }
-
-}
-
-//extension HydrangeaViewController: UISearchResultsUpdating, UISearchControllerDelegate {
-//
-////    func updateSearchResults(for searchController: UISearchController) {
-////        if let searchText = searchController.searchBar.text {
-////            hydraFiltered = searchText.isEmpty ? hydraList : hydraList.filter { (item: Character) -> Bool in
-////                return item.name.lowercased().contains(searchText.lowercased())
-////            }
-////        }
-////        tableHydrangea.reloadData()
-////
-////    }
-//    func updateSearchResults(for searchController: UISearchController) {
-//        filterContentForSearchText(searchController.searchBar.text!)
-//    }
-//
-//    private func filterContentForSearchText(_ searchText: String) {
-//        hydraFiltered = searchText.isEmpty ? hydraList : hydraList.filter( { (item: Character) -> Bool in
-//            return item.name.lowercased().contains(searchText.lowercased())
-//        })
-//
-//        tableHydrangea.reloadData()
-//    }
-//
-//
-//}
-
-
-
-extension HydrangeaViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        tapGesture.cancelsTouchesInView = false
-        view.addGestureRecognizer(tapGesture)
-
-    }
-    
-    @objc func hideKeyboard() {
-        view.endEditing(true)
-    }
-    
 }
 
 
@@ -180,6 +135,5 @@ extension HydrangeaViewController {
         isViewSercheBar.toggle()
         customNavigationBar.searchBar.isHidden = !isViewSercheBar
         customNavigationBar.titleLabel.isHidden = isViewSercheBar
-        
     }
 }
