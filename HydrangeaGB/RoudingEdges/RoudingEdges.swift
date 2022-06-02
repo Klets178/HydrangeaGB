@@ -12,7 +12,7 @@ extension UIView {
     
     @IBInspectable var cornerRadius: CGFloat {
         get { return layer.cornerRadius }
-        set { layer.cornerRadius = bounds.height / newValue
+        set { layer.cornerRadius = frame.height / newValue
         }
     }
     

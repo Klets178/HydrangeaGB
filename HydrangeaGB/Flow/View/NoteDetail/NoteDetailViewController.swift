@@ -10,7 +10,9 @@ import CoreData
 
 class NoteDetailViewController: UIViewController {
     
+    let repository = CoreDataRepository()
     var noteOne = NotesModel(id: UUID(), date: DateFormatter.setDateFormat(date: Date()), title: String())
+    var update: Bool = false
 
     var pickerView = UIView()
 
@@ -35,11 +37,11 @@ class NoteDetailViewController: UIViewController {
         // keyboard
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
+
         
-    
         setCustomNavigationBar()
         createDatePicker()
-
+                
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,12 +68,14 @@ class NoteDetailViewController: UIViewController {
     }
     
     @IBAction func okTouch(_ sender: Any) {
-//        Repository().saveNote()
-
         noteOne.date = noteDate.text ?? String()
         noteOne.title = noteTitle.text ?? String()
         noteOne.text =  noteText.text
-        saveNotes(note: noteOne)
+        if update {
+            repository.updateNote(note: noteOne)
+        } else {
+            repository.saveNote(note: noteOne)
+        }
         backAction()
     }
 }
@@ -129,7 +133,7 @@ extension NoteDetailViewController {
         pickerView.heightAnchor.constraint(equalTo: datePicker.heightAnchor).isActive = true
         pickerView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         pickerView.backgroundColor = UIColor.colorHydrangea
-        pickerView.cornerRadius = 32
+        pickerView.cornerRadius = 4
         pickerView.borderWidth = 1
         pickerView.layer.shadowColor = UIColor.black.cgColor
         pickerView.layer.shadowOpacity = 1
