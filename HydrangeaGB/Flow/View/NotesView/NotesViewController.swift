@@ -10,7 +10,10 @@ import CoreData
 
 class NotesViewController: UIViewController {
 
- 
+    var notesList = [NotesModel]()
+//    var notesList: [NSManagedObject] = []
+    let repository = CoreDataRepository()
+
     
     @IBOutlet weak var customNavigationBar: NavigationBar!
     @IBOutlet weak var tableNotes: UITableView!
@@ -20,11 +23,23 @@ class NotesViewController: UIViewController {
         
         setTableNotes()
         setCustomNavigationBar()
+        getNotes()
+
      }
     
     override func viewWillAppear(_ animated: Bool) {
+        getNotes()
         tableNotes.reloadData()
      }
+}
+
+
+extension NotesViewController {
+    func getNotes() {
+        let fetchNotes = repository.fetchNotesData()
+        notesList = repository.notesDataToModel(notesData: fetchNotes)
+
+    }
 }
 
 
@@ -34,6 +49,9 @@ extension NotesViewController {
         tableNotes.delegate = self
         tableNotes.dataSource = self
         tableNotes.registerCell(type: NotesTableViewCell.self)
+        
+        tableNotes.rowHeight = UITableView.automaticDimension
+        tableNotes.estimatedRowHeight = 60
     }
 }
 
@@ -70,12 +88,21 @@ extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
         else { return UITableViewCell() }
 
         cell.configure(with: notesList[indexPath.row])
-
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         toDetailNote(row: indexPath.row)
+    }
+        
+   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            //repository.deleteNotesForID(id: notesList[indexPath.row].id)
+            repository.deleteNoteID(id: notesList[indexPath.row].id)
+            notesList.remove(at: indexPath.row)
+            tableNotes.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 }
 
@@ -88,6 +115,7 @@ extension NotesViewController {
         else { return }
         
         detailViewController.noteOne = notesList[row]
+        detailViewController.update = true
 
         navigationController?.pushViewController(detailViewController, animated: true)
      }

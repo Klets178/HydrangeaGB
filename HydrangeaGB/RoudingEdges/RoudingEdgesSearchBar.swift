@@ -15,7 +15,7 @@ class RoudingEdgesSearchBar: UISearchBar {
    override func awakeFromNib() {
        barTintColor = .colorHydrangea
        searchTextField.backgroundColor = .colorHydrangea
-       layer.cornerRadius = bounds.height / cornerNew
+       layer.cornerRadius = frame.height / cornerNew
        layer.masksToBounds = true
        layer.borderWidth = borderWidthNew
        layer.borderColor = borderColorNew.cgColor

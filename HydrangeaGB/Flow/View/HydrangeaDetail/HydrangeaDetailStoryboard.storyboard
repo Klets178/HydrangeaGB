@@ -31,7 +31,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PqN-iG-dsn">
                                 <rect key="frame" x="8" y="106" width="398" height="748"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k5d-CZ-izS">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k5d-CZ-izS">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="134"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -151,11 +151,6 @@
             <point key="canvasLocation" x="2085.507246376812" y="-293.30357142857139"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="RgT-oz-Q2U">
-            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
-        </designable>
-    </designables>
     <resources>
         <image name="background2" width="300" height="650"/>
         <namedColor name="ColorHydrandea">
